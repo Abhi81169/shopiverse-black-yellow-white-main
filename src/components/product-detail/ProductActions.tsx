@@ -80,14 +80,13 @@
 
 // export default ProductActions;
 
-import React, { useState } from 'react';
-import { Product } from '@/types';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, X } from 'lucide-react';
-import { useCart } from '@/hooks/use-cart';
 import { useToast } from '@/components/ui/use-toast';
-import { useNavigate } from 'react-router-dom';
+import { useCart } from '@/hooks/use-cart';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Product } from '@/types';
+import { ShoppingCart } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface ProductActionsProps {
   product: Product;

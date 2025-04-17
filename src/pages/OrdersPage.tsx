@@ -1,13 +1,12 @@
 
-import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { Package, ChevronRight, ShoppingBag } from "lucide-react";
 import { useOrders } from "@/hooks/use-orders";
 import { formatDate, formatPrice } from "@/lib/formatters";
+import { ChevronRight, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const getStatusColor = (status: string) => {
   switch (status) {
@@ -37,7 +36,7 @@ const OrdersPage = () => {
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold">My Orders</h1>
           <Button className="bg-primary hover:bg-primary/90" asChild>
-            <Link to="/">Continue Shopping</Link>
+            <Link to="/index">Continue Shopping</Link>
           </Button>
         </div>
 
@@ -105,7 +104,7 @@ const OrdersPage = () => {
               When you place an order, they will appear here.
             </p>
             <Button className="bg-primary hover:bg-primary/90" asChild>
-              <Link to="/">Start Shopping</Link>
+              <Link to="/index">Start Shopping</Link>
             </Button>
           </div>
         )}

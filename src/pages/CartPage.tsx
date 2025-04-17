@@ -1,10 +1,10 @@
 
-import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/use-cart';
-import { Trash2, ArrowRight, ShoppingBag } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { ArrowRight, ShoppingBag, Trash2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateCartItemQuantity, clearCart, cartTotal } = useCart();
@@ -21,7 +21,7 @@ const CartPage = () => {
             <h2 className="text-lg font-medium">Your cart is empty</h2>
             <p className="text-muted-foreground mt-2 mb-6 text-sm">Looks like you haven't added anything to your cart yet.</p>
             <Button asChild className="bg-brand-yellow text-black hover:bg-yellow-600">
-              <Link to="/">Continue Shopping</Link>
+              <Link to="/index">Continue Shopping</Link>
             </Button>
           </div>
         ) : (
@@ -51,7 +51,7 @@ const CartPage = () => {
                             <p className="text-xs text-muted-foreground">
                               Category: {item.category}
                             </p>
-                            <p className="font-medium text-sm mt-1">${item.price.toFixed(2)}</p>
+                            <p className="font-medium text-sm mt-1">₹{item.price.toFixed(2)}</p>
                           </div>
                         </div>
                         
@@ -180,7 +180,7 @@ const CartPage = () => {
                   asChild
                   size={isMobile ? "sm" : "default"}
                 >
-                  <Link to="/">Continue Shopping</Link>
+                  <Link to="/index">Continue Shopping</Link>
                 </Button>
               </div>
             </div>

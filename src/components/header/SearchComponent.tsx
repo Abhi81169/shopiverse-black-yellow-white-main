@@ -1,10 +1,10 @@
 
-import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Product } from '@/types';
+import { Button } from '@/components/ui/button';
 import { searchProducts } from '@/lib/api';
+import { Product } from '@/types';
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SearchComponent = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -103,13 +103,9 @@ const SearchComponent = () => {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-medium truncate">{product.name}</p>
-                    <p className="text-sm text-muted-foreground">${product.price.toFixed(2)}</p>
+                    <p className="text-sm text-muted-foreground">₹{product.price.toFixed(2)}</p>
                   </div>
-                  {product.inStock && (
-                    <Badge className="bg-green-500 text-white uppercase text-xs">
-                      Buy
-                    </Badge>
-                  )}
+                 
                 </div>
               </li>
             ))}

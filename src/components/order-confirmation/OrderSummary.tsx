@@ -52,7 +52,7 @@ const OrderSummary = ({ orderNumber, onCancelOrder, onReturnOrder }: OrderSummar
         </div>
         
         <Button asChild className="bg-brand-yellow text-black hover:bg-yellow-600">
-          <Link to="/">Continue Shopping</Link>
+          <Link to="/index">Continue Shopping</Link>
         </Button>
         
         <Button asChild variant="outline">

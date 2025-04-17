@@ -36,7 +36,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === '/index';
   
   // Define routes where Header should be hidden
   const hideHeaderOnRoutes = ['/login', '/signuppage'];
