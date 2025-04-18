@@ -28,9 +28,6 @@ const AccountMenu = () => {
           <Link to="/wishlist">Wishlist</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link to="/login">Login</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
           <Link to="/">Logout</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>

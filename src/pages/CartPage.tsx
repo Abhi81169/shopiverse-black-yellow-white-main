@@ -76,7 +76,7 @@ const CartPage = () => {
                           
                           <div className="flex items-center">
                             <p className="font-medium text-sm mr-3">
-                              ${((item.price * (item.quantity || 1))).toFixed(2)}
+                              ₹{((item.price * (item.quantity || 1))).toFixed(2)}
                             </p>
                             <Button 
                               variant="ghost" 
@@ -128,7 +128,7 @@ const CartPage = () => {
                               </div>
                             </div>
                           </td>
-                          <td className="py-4 px-6">${item.price.toFixed(2)}</td>
+                          <td className="py-4 px-6">₹{item.price.toFixed(2)}</td>
                           <td className="py-4 px-6">
                             <div className="flex border rounded-md overflow-hidden w-24">
                               <button 
@@ -149,7 +149,7 @@ const CartPage = () => {
                             </div>
                           </td>
                           <td className="py-4 px-6 font-medium">
-                            ${((item.price * (item.quantity || 1))).toFixed(2)}
+                            ₹{((item.price * (item.quantity || 1))).toFixed(2)}
                           </td>
                           <td className="py-4 px-6">
                             <Button 
@@ -192,7 +192,7 @@ const CartPage = () => {
                 <div className="space-y-2 mb-4 text-sm lg:text-base">
                   <div className="flex justify-between">
                     <span>Subtotal</span>
-                    <span>${cartTotal.toFixed(2)}</span>
+                    <span>₹{cartTotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Shipping</span>
@@ -207,7 +207,7 @@ const CartPage = () => {
                 <div className="border-t pt-4 mb-4">
                   <div className="flex justify-between font-bold text-base lg:text-lg">
                     <span>Total</span>
-                    <span>${cartTotal.toFixed(2)}</span>
+                    <span>₹{cartTotal.toFixed(2)}</span>
                   </div>
                 </div>
                 

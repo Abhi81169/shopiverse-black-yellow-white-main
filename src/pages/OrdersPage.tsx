@@ -42,7 +42,9 @@ const OrdersPage = () => {
 
         {orders.length > 0 ? (
           <div className="space-y-6">
-            {orders.map((order) => (
+            {orders
+            .filter((order) => order.total !== 151) // 👈 hide orders where total is 151
+            .map((order) => (
               <Card key={order.id} className="overflow-hidden">
                 <CardHeader className="bg-muted/50">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
