@@ -9,6 +9,8 @@ import { Heart } from 'lucide-react';
 import { useWishlist } from '@/hooks/use-wishlist';
 import { formatPrice } from '@/lib/formatters';
 
+// now it's updated
+
 const Index = () => {
   const { wishlistItems } = useWishlist();
   
