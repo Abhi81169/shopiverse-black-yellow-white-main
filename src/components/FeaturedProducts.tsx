@@ -132,23 +132,23 @@ const FeaturedProducts = () => {
     : products.filter(product => product.source === activeSource);
 
   return (
-    <section className="py-8 bg-gray-50">
+    <section className="py-9 bg-gray-50" >
       <div className="container mx-relative px-8">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex space around items-center mb-6">
           <h2 className="text-xl font-bold">Featured Products</h2>
         </div>
 
-        <div className="overflow-y-hidden">
+        <div className="rounded-lg shadow-md  overflow-hidden-auto">
           {isLoading ? (
-            <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
               {Array.from({ length: 10 }).map((_, index) => (
-                <div key={index} className="overflow-hidden h-full hover:shadow-md transition-shadow bg-gray-700 "></div>
+                <div key={index} className="aspect-square overflow-hidden h-auto hover:shadow-md transition-shadow bg-gray-600 "></div>
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-10">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 object-cover h-auto gap-6">
               {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} className="overflow-hidden hover:shadow  h-full w-full  " />
+                <ProductCard key={product.id} product={product} className="object cover overflow-hidden hover:shadow  h-full w-full  " />
               ))}
             </div>
           )}
