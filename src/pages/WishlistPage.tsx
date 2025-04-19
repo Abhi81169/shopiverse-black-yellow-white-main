@@ -28,7 +28,7 @@ const WishlistPage = () => {
             <Heart className="mx-auto h-12 w-12 text-gray-300 mb-4" />
             <h2 className="text-2xl font-semibold mb-2">Your wishlist is empty</h2>
             <p className="text-gray-500 mb-6">Start adding items to your wishlist as you shop</p>
-            <Link to="/">
+            <Link to="/index">
               <Button>Continue Shopping</Button>
             </Link>
           </div>

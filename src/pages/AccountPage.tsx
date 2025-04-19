@@ -195,7 +195,7 @@ const AccountPage = () => {
                 When you place an order, they will appear here.
               </p>
               <Button className="bg-primary hover:bg-primary/90" asChild>
-                <a href="/">Start Shopping</a>
+                <a href="/index">Start Shopping</a>
               </Button>
             </div>
           </TabsContent>

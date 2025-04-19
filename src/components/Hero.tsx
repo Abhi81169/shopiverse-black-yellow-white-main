@@ -1,18 +1,17 @@
+// export default Hero;
 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import '@/index.css'; // or wherever you added the slideshow CSS
 
 const Hero = () => {
   return (
     <div className="relative h-[500px] overflow-hidden">
-      <div className="absolute inset-0 bg-black">
-        <img 
-          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-          alt="Fashion collection"
-          className="w-full h-full object-cover object-center opacity-70"
-        />
-      </div>
-      <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-start">
+      {/* 🔁 Animated background slideshow */}
+      <div className="absolute inset-0 bg-black bg-slideshow opacity-70 z-0"></div>
+
+      {/* 🔤 Content */}
+      <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-start z-10">
         <h1 className="text-4xl md:text-6xl font-bold text-white max-w-xl">
           New Season <span className="text-brand-yellow">Arrivals</span>
         </h1>
