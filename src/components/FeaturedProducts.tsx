@@ -105,6 +105,8 @@ import { fetchFeaturedProducts } from '@/lib/api';
 import { Product } from '@/types';
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
+import { Button } from '@/components/ui/button';
+
 
 const FeaturedProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -136,6 +138,11 @@ const FeaturedProducts = () => {
       <div className="container mx-relative px-8">
         <div className="flex space around items-center mb-6">
           <h2 className="text-xl font-bold">Featured Products</h2>
+          {/* <Link to="/feature">
+                <Button variant="link" className="text-brand-yellow">
+                  View All <FeaturedProducts className="ml-2 h-4 w-4" />
+                </Button>
+              </Link> */}
         </div>
 
         <div className="rounded-lg shadow-md  overflow-hidden-auto">

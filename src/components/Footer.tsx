@@ -29,8 +29,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Customer Service</h4>
             <ul className="space-y-2">
               <li><Link to="/contact" className="text-gray-400 hover:text-brand-yellow transition-colors">Contact Us</Link></li>
-              <li><Link to="/faq" className="text-gray-400 hover:text-brand-yellow transition-colors">FAQs</Link></li>
-              <li><Link to="/shipping" className="text-gray-400 hover:text-brand-yellow transition-colors">Shipping & Returns</Link></li>
+              <li><Link to="/faqs" className="text-gray-400 hover:text-brand-yellow transition-colors">FAQs</Link></li>
+              <li><Link to="/shipping-returns" className="text-gray-400 hover:text-brand-yellow transition-colors">Shipping & Returns</Link></li>
               <li><Link to="/size-guide" className="text-gray-400 hover:text-brand-yellow transition-colors">Size Guide</Link></li>
             </ul>
           </div>
@@ -40,7 +40,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-brand-yellow transition-colors">About Us</Link></li>
               <li><Link to="/privacy-policy" className="text-gray-400 hover:text-brand-yellow transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-gray-400 hover:text-brand-yellow transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/terms-and-conditions" className="text-gray-400 hover:text-brand-yellow transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
         </div>
