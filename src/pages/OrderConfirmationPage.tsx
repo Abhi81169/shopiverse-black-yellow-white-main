@@ -1,13 +1,20 @@
-
+import { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import OrderSummary from '@/components/order-confirmation/OrderSummary';
 import CancelOrderDialog from '@/components/order-confirmation/CancelOrderDialog';
 import ReturnOrderDialog from '@/components/order-confirmation/ReturnOrderDialog';
 import { useOrderConfirmation } from '@/hooks/use-order-confirmation';
+import { getNextOrderNumber } from '@/hooks/use-order-confirmation'; // ✅ make sure this is exported from the hook file
 
 const OrderConfirmationPage = () => {
+  const [orderNumber, setOrderNumber] = useState('');
+
+  useEffect(() => {
+    const number = getNextOrderNumber(); // ✅ generate once
+    setOrderNumber(number);
+  }, []);
+
   const {
-    orderNumber,
     cancelDialogOpen,
     setCancelDialogOpen,
     returnDialogOpen,

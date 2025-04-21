@@ -13,7 +13,11 @@ import ProductDetailPage from '@/pages/ProductDetailPage';
 import SearchResultsPage from '@/pages/SearchResultsPage';
 import SignupPage from '@/pages/SignupPage';
 import WishlistPage from '@/pages/WishlistPage';
-import { Route, Routes } from 'react-router-dom';
+//import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NewArrivals from "./pages/NewArrivals";
+import BestSellers from "./pages/BestSellers";
+import Sale from "./pages/Sale";
 
 
 
@@ -35,8 +39,14 @@ function App() {
       <Route path="/search" element={<SearchResultsPage />} />
       <Route path="/" element={<HomePage />} />
       <Route path="*" element={<NotFound />} />
+
+      <Route path="/new-arrivals" element={<NewArrivals />} />
+      <Route path="/best-sellers" element={<BestSellers />} />
+      <Route path="/sale" element={<Sale />} />
+
     </Routes>
   );
 }
+
 
 export default App;
