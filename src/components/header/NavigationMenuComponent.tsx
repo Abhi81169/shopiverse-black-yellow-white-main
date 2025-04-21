@@ -1,6 +1,12 @@
 
-import { Link } from 'react-router-dom';
-import { 
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -8,7 +14,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-
+import { Link } from 'react-router-dom';
 interface Category {
   name: string;
   path: string;
@@ -43,17 +49,17 @@ const NavigationMenuComponent = ({ categories }: NavigationMenuComponentProps) =
                   </NavigationMenuLink>
                 </li>
                 <li>
-                  <Link to={`/new-arrivals`} className="block p-2 hover:bg-accent rounded-md">
+                  <Link to={`${category.path}/new-arrivals`} className="block p-2 hover:bg-accent rounded-md">
                     New Arrivals
                   </Link>
                 </li>
-                <li> 
-                  <Link to={`/best-sellers`} className="block p-2 hover:bg-accent rounded-md">
+                <li>
+                  <Link to={`${category.path}/best-sellers`} className="block p-2 hover:bg-accent rounded-md">
                     Best Sellers
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/sale`} className="block p-2 hover:bg-accent rounded-md">
+                  <Link to={`${category.path}/sale`} className="block p-2 hover:bg-accent rounded-md">
                     Sale
                   </Link>
                 </li>
@@ -67,3 +73,4 @@ const NavigationMenuComponent = ({ categories }: NavigationMenuComponentProps) =
 };
 
 export default NavigationMenuComponent;
+

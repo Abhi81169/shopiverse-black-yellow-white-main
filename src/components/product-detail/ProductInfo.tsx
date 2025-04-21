@@ -215,7 +215,7 @@ const ProductInfo = ({ product, quantity, setQuantity, ...props }: ProductInfoPr
           <li>Material: {product.material || 'Premium Quality'}</li>
           <li>Available in multiple sizes</li>
           <li>In stock: {product.inStock ? 'Yes' : 'No'}</li>
-          <li>Free shipping on orders over 50</li>
+          <li>Free shipping on orders over ₹50</li>
         </ul>
       </div>
     </div>
