@@ -156,7 +156,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold">
+          <Link to="/index" className="text-2xl font-bold">
             Shopi<span className="text-brand-yellow">Verse</span>
           </Link>
 

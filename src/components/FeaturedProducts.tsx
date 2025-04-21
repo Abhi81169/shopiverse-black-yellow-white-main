@@ -149,13 +149,13 @@ const FeaturedProducts = () => {
           {isLoading ? (
             <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
               {Array.from({ length: 10 }).map((_, index) => (
-                <div key={index} className="aspect-square overflow-hidden h-auto hover:shadow-md transition-shadow bg-gray-600 "></div>
+                <div key={index} className="overflow-hidden h-auto w-auto hover:shadow-md transition-shadow "></div>
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 object-cover h-auto gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 object-cover h-auto w-auto gap-12">
               {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} className="object cover overflow-hidden hover:shadow  h-full w-full  " />
+                <ProductCard key={product.id} product={product} className="object cover overflow-hidden hover:shadow  h-45 w-full  " />
               ))}
             </div>
           )}
