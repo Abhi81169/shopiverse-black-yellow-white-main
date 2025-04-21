@@ -1,100 +1,62 @@
 
-// import { fetchFeaturedProducts } from '@/lib/api';
-// import { Product } from '@/types';
-// import { useEffect, useState } from 'react';
-// import ProductCard from './ProductCard';
+// // src/pages/FeaturedProducts.tsx
+// import { motion } from "framer-motion";
+// import React from "react";
 
-// // Define our product sources
-// // const PRODUCT_SOURCES = {
-// //   SHOPIVERSE: 'Shopiverse',
-// //   FLIPKART: 'Flipkart',
-// //   MEESHO: 'Meesho'
-// // };
+// interface Product {
+//   name: string;
+//   category: string;
+//   imageUrl: string;
+//   price: string;
+// }
+
+// const featuredProducts: Product[] = [
+//   { name: "Men's Denim Jacket", category: "Men", imageUrl: "https://via.placeholder.com/300x400?text=Men+Jacket", price: "$49.99" },
+//   { name: "Women's Blazer", category: "Women", imageUrl: "https://via.placeholder.com/300x400?text=Women+Blazer", price: "$59.99" },
+//   { name: "Boy's Graphic Tee", category: "Boys", imageUrl: "https://via.placeholder.com/300x400?text=Boys+Tee", price: "$19.99" },
+//   { name: "Girl's Floral Dress", category: "Girls", imageUrl: "https://via.placeholder.com/300x400?text=Girls+Dress", price: "$29.99" },
+//   { name: "Men's Sneakers", category: "Men", imageUrl: "https://via.placeholder.com/300x400?text=Men+Sneakers", price: "$69.99" },
+//   { name: "Women's Handbag", category: "Women", imageUrl: "https://via.placeholder.com/300x400?text=Handbag", price: "$39.99" },
+//   { name: "Boy's Shorts", category: "Boys", imageUrl: "https://via.placeholder.com/300x400?text=Boys+Shorts", price: "$14.99" },
+//   { name: "Girl's Hoodie", category: "Girls", imageUrl: "https://via.placeholder.com/300x400?text=Girls+Hoodie", price: "$24.99" },
+//   { name: "Men's Hoodie", category: "Men", imageUrl: "https://via.placeholder.com/300x400?text=Hoodie", price: "$39.99" },
+//   { name: "Women's Boots", category: "Women", imageUrl: "https://via.placeholder.com/300x400?text=Boots", price: "$79.99" },
+//   { name: "Boy's Sneakers", category: "Boys", imageUrl: "https://via.placeholder.com/300x400?text=Boy+Sneakers", price: "$29.99" },
+//   { name: "Girl's Leggings", category: "Girls", imageUrl: "https://via.placeholder.com/300x400?text=Girls+Leggings", price: "$19.99" },
+//   { name: "Men's Polo", category: "Men", imageUrl: "https://via.placeholder.com/300x400?text=Men+Polo", price: "$24.99" },
+//   { name: "Women's Jeans", category: "Women", imageUrl: "https://via.placeholder.com/300x400?text=Women+Jeans", price: "$44.99" },
+//   { name: "Unisex Cap", category: "Accessories", imageUrl: "https://via.placeholder.com/300x400?text=Cap", price: "$9.99" },
+// ];
 
 // const FeaturedProducts = () => {
-//   const [products, setProducts] = useState<Product[]>([]);
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [activeSource, setActiveSource] = useState<string>('all');
-
-//   useEffect(() => {
-//     const loadProducts = async () => {
-//       setIsLoading(true);
-//       try {
-//         let data = await fetchFeaturedProducts();
-        
-//         // Add source information to products
-//         // data = data.map(product => ({
-//         //   ...product,
-//         //   source: product.id.includes('3') 
-//         //     ? PRODUCT_SOURCES.FLIPKART 
-//         //     : product.id.includes('1') 
-//         //       ? PRODUCT_SOURCES.MEESHO 
-//         //       : PRODUCT_SOURCES.SHOPIVERSE
-//         // }));
-        
-//         setProducts(data);
-//       } catch (error) {
-//         console.error('Failed to fetch featured products:', error);
-//       } finally {
-//         setIsLoading(false);
-//       }
-//     };
-
-//     loadProducts();
-//   }, []);
-
-//   const filteredProducts = activeSource === 'all' 
-//     ? products 
-//     : products.filter(product => product.source === activeSource);
-
 //   return (
-//     <section className="py-8 bg-gray-50">
-//       <div className="container  px-4">
-//         <div className="flex justify-between items-center mb-6">
-//           <h2 className="text-xl font-bold">Featured Products</h2>
-//           <div className="flex space-x-2 text-xs">
-//             {/* <button 
-//               onClick={() => setActiveSource('all')}
-//               className={`px-2 py-1 rounded ${activeSource === 'all' ? 'bg-brand-yellow text-black' : 'bg-gray-200'}`}
-//             >
-//               All
-//             </button>
-//             <button 
-//               onClick={() => setActiveSource(PRODUCT_SOURCES.SHOPIVERSE)}
-//               className={`px-2 py-1 rounded ${activeSource === PRODUCT_SOURCES.SHOPIVERSE ? 'bg-brand-yellow text-black' : 'bg-gray-200'}`}
-//             >
-//               Shopiverse
-//             </button>
-//             <button 
-//               onClick={() => setActiveSource(PRODUCT_SOURCES.FLIPKART)}
-//               className={`px-2 py-1 rounded ${activeSource === PRODUCT_SOURCES.FLIPKART ? 'bg-brand-yellow text-black' : 'bg-gray-200'}`}
-//             >
-//               Flipkart
-//             </button>
-//             <button 
-//               onClick={() => setActiveSource(PRODUCT_SOURCES.MEESHO)}
-//               className={`px-2 py-1 rounded ${activeSource === PRODUCT_SOURCES.MEESHO ? 'bg-brand-yellow text-black' : 'bg-gray-200'}`}
-//             >
-//               Meesho
-//             </button> */}
-//           </div>
-//         </div>
-        
-//         {isLoading ? (
-//           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-//             {Array.from({ length: 10 }).map((_, index) => (
-//               <div key={index} className="rounded-md bg-gray-200 animate-pulse h-48"></div>
-//             ))}
-//           </div>
-//         ) : (
-//           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-//             {filteredProducts.map((product) => (
-//               <ProductCard key={product.id} product={product} className="h-full" />
-//             ))}
-//           </div>
-//         )}
+//     <div className="px-6 py-10 bg-white text-gray-900">
+//       <h1 className="text-4xl font-bold text-center mb-10">🌟 Featured Products</h1>
+      
+//       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+//         {featuredProducts.map((product, index) => (
+//           <motion.div
+//             key={index}
+//             className="border rounded-lg overflow-hidden shadow hover:shadow-xl transition"
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             viewport={{ once: true }}
+//             transition={{ duration: 0.5, delay: index * 0.05 }}
+//           >
+//             <img
+//               src={product.imageUrl}
+//               alt={product.name}
+//               className="w-full h-64 object-cover"
+//             />
+//             <div className="p-4">
+//               <h3 className="text-lg font-semibold">{product.name}</h3>
+//               <p className="text-sm text-gray-500">{product.category}</p>
+//               <p className="text-red-600 font-bold mt-2">{product.price}</p>
+//             </div>
+//           </motion.div>
+//         ))}
 //       </div>
-//     </section>
+//     </div>
 //   );
 // };
 
@@ -105,8 +67,6 @@ import { fetchFeaturedProducts } from '@/lib/api';
 import { Product } from '@/types';
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
-import { Button } from '@/components/ui/button';
-
 
 const FeaturedProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -136,18 +96,13 @@ const FeaturedProducts = () => {
   return (
     <section className="py-9 bg-gray-50" >
       <div className="container mx-relative px-8">
-        <div className="flex space around items-center mb-6">
+        <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold">Featured Products</h2>
-          {/* <Link to="/feature">
-                <Button variant="link" className="text-brand-yellow">
-                  View All <FeaturedProducts className="ml-2 h-4 w-4" />
-                </Button>
-              </Link> */}
         </div>
 
-        <div className="rounded-lg shadow-md  overflow-hidden-auto">
+        <div className="overflow-y-hidden">
           {isLoading ? (
-            <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
               {Array.from({ length: 10 }).map((_, index) => (
                 <div key={index} className="overflow-hidden h-auto w-auto hover:shadow-md transition-shadow "></div>
               ))}
@@ -160,8 +115,6 @@ const FeaturedProducts = () => {
             </div>
           )}
         </div>
-    
- 
       </div>
     </section>
   );

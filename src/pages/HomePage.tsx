@@ -1,15 +1,23 @@
-// src/pages/HomePage.tsx
+//src/pages/HomePage.tsx
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 
-const HomePage = () => {
+  
+  const HomePage = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <Link to="/shop">
+    <Link to="/">
       <div
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center px-4"
         style={{
-          backgroundImage: "url('/assets/bg.jpg')"
+          backgroundImage: "url('https://media.timeout.com/images/100515417/750/562/image.jpg')"
         }}
       >
         {/* ✅ Dark overlay */}
@@ -37,8 +45,144 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+           {/* Featured Photos */}
+      <section className="py-12 px-4 md:px-12">
+        <h2 className="text-3xl font-bold text-center mb-8">Featured Looks</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            "https://images.unsplash.com/photo-1514996937319-344454492b37",
+            "https://images.unsplash.com/photo-1520975911433-ec77e8f5f4e8",
+            "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126",
+            "https://images.unsplash.com/photo-1556905055-8f358a7a47b2",
+          ].map((url, i) => (
+            <img
+              key={i}
+              src={`${url}?auto=format&fit=crop&w=600&q=80`}
+              alt="Featured"
+              className="w-full h-72 object-cover rounded shadow-lg  hover:scale-105 hover:shadow-2xl transition-shadow"
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* About Brand */}
+      <section className="py-16 bg-gray-100 text-center px-6">
+        <div className="max-w-3xl mx-auto" data-aos="fade-up">
+          <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
+          <p className="text-lg mb-6">
+            At <strong>ShopiVarse</strong>, we believe fashion is more than clothes—it's
+            confidence, expression, and identity. Whether you're shopping for streetwear
+            or classic essentials, we have something for every vibe.
+          </p>
+          <Link
+            to="/"
+            className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition"
+          >
+            View Best Sellers
+          </Link>
+        </div>
+      </section> 
+
     </Link>
   );
 };
 
 export default HomePage;
+
+
+// // src/pages/Home.tsx
+// import { useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+
+// import {motion} from 'framer-motion';
+// const Home = () => {
+//   useEffect(() => {
+//     AOS.init({ duration: 1000 });
+//   }, []);
+
+//   return (
+//     <div className="bg-white text-gray-900">
+//       {/* Hero Section */}
+//       <section
+//         className="relative h-[90vh] bg-cover bg-center flex items-center justify-center"
+//         style={{
+//           backgroundImage:
+//             "url('https://images.unsplash.com/photo-1521336575822-6da63fb4543f?auto=format&fit=crop&w=1950&q=80')",
+//         }}
+//       >
+//         <div className="bg-black bg-opacity-50 p-8 text-center rounded-md text-white max-w-xl">
+//           <h1 className="text-4xl md:text-5xl font-bold mb-4">
+//             Welcome to TrendZone
+//           </h1>
+//           <p className="text-lg mb-6">
+//             Explore our exclusive clothing collection for Men, Women, Boys, and Girls.
+//           </p>
+//           <Link
+//             to="/new-arrivals"
+//             className="bg-white text-black px-6 py-3 rounded hover:bg-gray-200 transition"
+//           >
+//             Shop New Arrivals
+//           </Link>
+//         </div>
+//       </section>
+//       {/* Featured Photos */}
+//       <section className="py-12 px-4 md:px-12">
+//         <h2 className="text-3xl font-bold text-center mb-8">Featured Looks</h2>
+//         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+//           {[
+//             "https://images.unsplash.com/photo-1514996937319-344454492b37",
+//             "https://images.unsplash.com/photo-1520975911433-ec77e8f5f4e8",
+//             "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126",
+//             "https://images.unsplash.com/photo-1556905055-8f358a7a47b2",
+//           ].map((url, i) => (
+//             <img
+//               key={i}
+//               src={`${url}?auto=format&fit=crop&w=600&q=80`}
+//               alt="Featured"
+//               className="w-full h-72 object-cover rounded shadow-lg hover:scale-105 hover:shadow-2xl transition-shadow"
+//               data-aos="fade-up"
+//               data-aos-delay={i * 100}
+//             />
+//           ))}
+//         </div>
+//       </section>
+
+//       {/* About Brand */}
+//       <section className="py-16 bg-gray-100 text-center px-6">
+//         <div className="max-w-3xl mx-auto" data-aos="fade-up">
+//           <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
+//           <p className="text-lg mb-6">
+//             At <strong>TrendZone</strong>, we believe fashion is more than clothes—it's
+//             confidence, expression, and identity. Whether you're shopping for streetwear
+//             or classic essentials, we have something for every vibe.
+//           </p>
+//           <Link
+//             to="/best-sellers"
+//             className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition"
+//           >
+//             View Best Sellers
+//           </Link>
+//         </div>
+//       </section>
+
+//       {/* Call to Action */}
+//       <section className="py-12 text-center">
+//         <h2 className="text-2xl font-semibold mb-4" data-aos="zoom-in">
+//           Ready to refresh your wardrobe?
+//         </h2>
+//         <Link
+//           to="/sale"
+//           className="bg-red-500 text-white px-6 py-3 rounded hover:bg-red-600 transition"
+//         >
+//           Shop the Sale
+//         </Link>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default Home;

@@ -5,13 +5,28 @@ import { CartItem } from '@/types';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// ✅ Place this at the top or bottom, but OUTSIDE of the hook
+export function getNextOrderNumber(): string {
+  const key = "orderNumber";
+  const lastNumber = parseInt(localStorage.getItem(key) || "9999", 10); // Get the last number or use 9999 as fallback
+  const newNumber = lastNumber + 1; // Increment the number
+  localStorage.setItem(key, String(newNumber)); // Save the new number back to localStorage
+  return `ORD-${newNumber}`; // Return the string in the format "ORD-10001"
+}
+
+
 export const useOrderConfirmation = () => {
   const navigate = useNavigate();
   const { clearCart } = useCart();
   const { addOrder, cancelOrder, returnOrder } = useOrders();
-   const orderNumber = `ORD-${Math.floor(100000 + Math.random() * 900000)}`;
+  //const orderNumber = `ORD-${Math.floor(100000 + Math.random() * 900000)}`;
 
-  
+  var orderNumber = 100000; // Start from this number
+
+function getNextOrderNumber() {
+  orderNumber += 1;
+  return `ORD-${orderNumber}`;
+}
   // State for dialogs
   const [cancelDialogOpen, setCancelDialogOpen] = useState(false);
   const [returnDialogOpen, setReturnDialogOpen] = useState(false);
@@ -40,21 +55,26 @@ export const useOrderConfirmation = () => {
 // const orderId = `ORD-${shortId}`;
 
     // Add order to orders context (without passing id since it's generated within addOrder)
-    addOrder({
-      product: mockProduct,
-      total: 150.99,
-      shippingAddress: {
-        firstName: "John",
-        lastName: "Doe",
-        address: "123 Main St",
-        city: "Anytown",
-        zipCode: "12345",
-        country: "USA",
-        phone: "555-123-4567"
-      },
-      paymentMethod: "Credit Card",
-      status: 'pending'
-    });
+
+
+    // dummy order  but it shows many times
+    // addOrder({
+    //   product: mockProduct,
+    //   total: 150.99,
+    //   shippingAddress: {
+    //     firstName: "John",
+    //     lastName: "Doe",
+    //     address: "123 Main St",
+    //     city: "Anytown",
+    //     zipCode: "12345",
+    //     country: "USA",
+    //     phone: "555-123-4567"
+    //   },
+    //   paymentMethod: "Credit Card",
+    //   status: 'pending'
+    // });
+
+
     
     // Clear cart after order is placed
     clearCart();
