@@ -49,17 +49,17 @@ const NavigationMenuComponent = ({ categories }: NavigationMenuComponentProps) =
                   </NavigationMenuLink>
                 </li>
                 <li>
-                  <Link to={`${category.path}/new-arrivals`} className="block p-2 hover:bg-accent rounded-md">
+                  <Link to={`/new-arrivals`} className="block p-2 hover:bg-accent rounded-md">
                     New Arrivals
                   </Link>
                 </li>
                 <li>
-                  <Link to={`${category.path}/best-sellers`} className="block p-2 hover:bg-accent rounded-md">
+                  <Link to={`/best-sellers`} className="block p-2 hover:bg-accent rounded-md">
                     Best Sellers
                   </Link>
                 </li>
                 <li>
-                  <Link to={`${category.path}/sale`} className="block p-2 hover:bg-accent rounded-md">
+                  <Link to={`/sale`} className="block p-2 hover:bg-accent rounded-md">
                     Sale
                   </Link>
                 </li>

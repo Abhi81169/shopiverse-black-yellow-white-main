@@ -20,7 +20,7 @@ const Hero = () => {
         </p>
         <div className="space-x-4">
           <Button asChild size="lg" className="bg-brand-yellow text-black font-semibold hover:bg-yellow-600">
-            <Link to="/category/new-arrivals">Shop Now</Link>
+            <Link to="/feature">Shop Now</Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-black hover:text-white">
             <Link to="/collections">View Collections</Link>
