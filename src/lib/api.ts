@@ -195,7 +195,7 @@ const products: Product[] = [
     description: 'Comfortable  Indian bridal suite.',
     price: 1200,
     category: 'women',
-    imageUrl: 'https://www.adiashco.com/cdn/shop/files/il_fullxfull.5225252191_8tpd_01477ddd-a7c4-41a1-bc7a-3044bfe94340.jpg?v=1720430086',
+    imageUrl: 'https://images.meesho.com/images/products/406106338/cvi1c_1200.jpg',
     inStock: true,
     material: 'cotton',
     createdAt: '2023-06-22T13:15:00Z',
@@ -221,7 +221,7 @@ const products: Product[] = [
     inStock: true,
     material: 'Cottan',
     createdAt: '2023-06-28T15:40:00Z',
-  }
+  },
 ];
 
 // Simulate API delay

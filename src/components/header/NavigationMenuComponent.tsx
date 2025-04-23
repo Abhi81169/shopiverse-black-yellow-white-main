@@ -43,8 +43,8 @@ const NavigationMenuComponent = ({ categories }: NavigationMenuComponentProps) =
                     </Link>
                   </NavigationMenuLink>
                 </li>
-                <li >
-                  <Link to={`/new-arrivals`} className="block p-2 hover:bg-accent rounded-md">
+                <li>
+                  <Link to={`${category.path}/new-arrivals`} className="block p-2 hover:bg-accent rounded-md">
                     New Arrivals
                   </Link>
                 </li>

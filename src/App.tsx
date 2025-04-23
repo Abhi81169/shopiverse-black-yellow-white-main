@@ -15,16 +15,6 @@ import SignupPage from '@/pages/SignupPage';
 import WishlistPage from '@/pages/WishlistPage';
 import { Route, Routes } from 'react-router-dom';
 import FeaturedProducts from './components/FeaturedProducts';
-import ContactUsPage from './pages/ContactUsPage';
-import FaqsPage from './pages/FaqsPage';
-import ShippingReturnsPage from './pages/ShippingReturnsPage';
-import SizeGuidePage from './pages/SizeGuidePage';
-import AboutUsPage from './pages/AboutUsPage';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
-import BestSellers from './pages/BestSellers';
-import NewArrivals from './pages/NewArrivals';
-import Sale from './pages/Sale';
 
 
 
@@ -46,17 +36,8 @@ function App() {
       <Route path="/signuppage" element={<SignupPage />} />
       <Route path="/search" element={<SearchResultsPage />} />
       <Route path="/" element={<HomePage />} />
+      <Route path="/contact" element={<ContactUsPage />} />
       <Route path="*" element={<NotFound />} />
-      <Route path="/contact" element={<ContactUsPage/>} />
-      <Route path="/faqs" element={<FaqsPage/>} />
-      <Route path="/shipping-returns" element={<ShippingReturnsPage/>} />
-      <Route path="/size-guide" element={<SizeGuidePage/>} />
-      <Route path="/about" element={<AboutUsPage/>} />
-      <Route path="/privacy-policy" element={<PrivacyPolicyPage/>} />
-      <Route path="/terms-and-conditions" element={<TermsAndConditionsPage/>} />
-      <Route path="/best-sellers" element={<BestSellers/>} />
-      <Route path="/new-arrivals" element={<NewArrivals/>} />
-      <Route path="/sale" element={<Sale/>} />
     </Routes>
   );
 }

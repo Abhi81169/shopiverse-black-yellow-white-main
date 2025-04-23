@@ -10,6 +10,8 @@ import { useWishlist } from '@/hooks/use-wishlist';
 import { formatPrice } from '@/lib/formatters';
 import { motion } from 'framer-motion';
 import { Star, Truck, Flame } from 'lucide-react';
+import WishlistButton from '@/components/header/WishlistButton';
+import WishlistPage from './WishlistPage';
 
 // now it's updated
 
@@ -22,7 +24,6 @@ const Index = () => {
       <CategorySection />
       <FeaturedProducts />
       <WhyChooseUs/>
-      
       {wishlistItems.length > 0 && (
         <div className="bg-gray-50 py-12">
           <div className="container mx-auto px-4">
@@ -46,7 +47,7 @@ const Index = () => {
                         src={item.imageUrl} 
                         alt={item.name} 
                         className="w-full h-full object-cover"
-                      />
+                        />
                     </div>
                     <div className="p-3">
                       <h3 className="font-medium text-xs line-clamp-3">{item.name}</h3>
@@ -62,7 +63,7 @@ const Index = () => {
       
     </Layout>
   );
-
+  
 };
 
 
@@ -119,6 +120,5 @@ const WhyChooseUs = () => {
   );
 };
 
-//export default WhyChooseUs;
 
 export default Index;
