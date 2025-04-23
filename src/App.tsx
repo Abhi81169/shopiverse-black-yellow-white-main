@@ -15,6 +15,7 @@ import SignupPage from '@/pages/SignupPage';
 import WishlistPage from '@/pages/WishlistPage';
 import { Route, Routes } from 'react-router-dom';
 import FeaturedProducts from './components/FeaturedProducts';
+import ContactUsPage from './pages/ContactUsPage';
 
 
 
