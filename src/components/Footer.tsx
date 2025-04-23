@@ -1,7 +1,11 @@
 
 import { Link } from 'react-router-dom';
- 
+
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-black text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
@@ -18,6 +22,15 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Categories</h4>
             <ul className="space-y-2">
+              <li>
+                <Link 
+                  to="/index" 
+                  onClick={scrollToTop} 
+                  className="text-gray-400 hover:text-brand-yellow transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
               <li><Link to="/category/men" className="text-gray-400 hover:text-brand-yellow transition-colors">Men</Link></li>
               <li><Link to="/category/women" className="text-gray-400 hover:text-brand-yellow transition-colors">Women</Link></li>
               <li><Link to="/category/boys" className="text-gray-400 hover:text-brand-yellow transition-colors">Boys</Link></li>

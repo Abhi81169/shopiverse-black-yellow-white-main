@@ -8,13 +8,13 @@ const PrivacyPolicyPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-yellow-50 relative ">
       {/* Top Navigation */}
-      <div className="w-full flex justify-between items-center px-6 py-4 absolute top-0 left-0 z-10 ">
+      <div className="w-full flex justify-between items-center px-6 py-4 absolute top-0 left-0 z-10 bg-blue-50 ">
          {/* Back Arrow Button */}
          <Link to="/index" className="text-3xl text-blue-600 hover:text-blue-800">
           ←
         </Link>
         {/* Centered ShopiVerse Title */}
-        <h2 className="text-4xl font-bold text-center absolute mt-10 left-1/2 transform -translate-x-1/2">
+        <h2 className="text-4xl font-bold text-center absolute mt-0 left-1/2 transform -translate-x-1/2">
         Shopi<span className="text-brand-yellow">Verse</span>
 
         </h2>

@@ -76,8 +76,7 @@ import { useEffect } from 'react';
             confidence, expression, and identity. Whether you're shopping for streetwear
             or classic essentials, we have something for every vibe.
           </p>
-          <Link
-            to="/"
+          <Link to="/login"
             className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition"
           >
             View Best Sellers

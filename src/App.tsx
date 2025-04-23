@@ -29,6 +29,7 @@ import { Footer } from 'react-day-picker';
 
 
 
+
 function App() {
   return (
     <Routes>
@@ -57,7 +58,6 @@ function App() {
       <Route path="/about" element={<AboutUsPage />} />
       <Route path="/best-sellers" element={<BestSellers />} />
       <Route path="/sale" element={<Sale />} />
-      <Route path="/new-arrivals" element={<NewArrivals />} />
       <Route path="/footer" element={<Footer />} />
     </Routes>
   );

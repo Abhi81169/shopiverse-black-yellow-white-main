@@ -1,33 +1,49 @@
 
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 const teamMembers = [
   {
     name: "Abhishek Kumar",
     role: "Founder & CEO",
-    image: "/images/team1.jpg",
+    image: "/assets/Abhishek1.jpg",
     bio: "Full-stack developer passionate about e-commerce solutions."
   },
   {
     name: "Aditya",
     role: "Marketing Head",
-    image: "/images/team2.jpg",
+    image: "/assets/Adi1.jpg",
     bio: "Expert in digital strategy and customer engagement."
   },
   {
     name: "Anuj Gupta",
     role: "Lead Developer",
-    image: "/images/team3.jpg",
+    image: "/assets/Anuj1.jpg",
     bio: "Visionary leader with a passion for innovation and fashion tech."
   }
 ];
 
 const AboutUsPage = () => {
   return (
+
     <div className="container mx-auto px-4 py-10">
+
+
+      <div className="w-full flex justify-between items-center px-6 py-4 absolute top-0 left-0 z-10 bg-blue-50 ">
+         {/* Back Arrow Button */}
+        <Link to="/index" className="text-3xl text-blue-600 hover:text-blue-800">
+          ←
+        </Link>
+        {/* Centered ShopiVerse Title */}
+        <h2 className="text-4xl font-bold text-center absolute mt-0 left-1/2 transform -translate-x-1/2">
+        Shopi<span className="text-brand-yellow">Verse</span>
+        </h2>
+      </div>
+
+
       <section className="py-16 px-4 md:px-8 lg:px-16">
         <motion.h1
-          className="text-4xl md:text-5xl font-bold text-center mb-6"
+          className="text-4xl md:text-3xl font-bold text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -55,7 +71,7 @@ const AboutUsPage = () => {
         {teamMembers.map((member, index) => (
           <motion.div
             key={index}
-            className="bg-white p-6 rounded-xl shadow-xl border hover:shadow-2x1 transition-shadow"
+            className="bg-green-50 p-6 rounded-xl shadow-xl border hover:shadow-2x1 transition-shadow"
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,6 +88,7 @@ const AboutUsPage = () => {
           </motion.div>
         ))}
       </div>
+
     </div>
   );
 };
