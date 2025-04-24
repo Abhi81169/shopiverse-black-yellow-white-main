@@ -15,7 +15,12 @@ import SignupPage from '@/pages/SignupPage';
 import WishlistPage from '@/pages/WishlistPage';
 import { Route, Routes } from 'react-router-dom';
 import FeaturedProducts from './components/FeaturedProducts';
+import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
+import ShippingReturnsPage from './pages/ShippingReturnsPage';
+import SizeGuidePage from './pages/SizeGuidePage';
+import { default as PrivacyPolicyPage, default as TermsAndConditionsPage } from './pages/TermsAndConditionsPage';
+import FaqsPage from './pages/FaqsPage';
 
 
 
@@ -38,6 +43,12 @@ function App() {
       <Route path="/search" element={<SearchResultsPage />} />
       <Route path="/" element={<HomePage />} />
       <Route path="/contact" element={<ContactUsPage />} />
+      <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+      <Route path="/shipping-returns" element={<ShippingReturnsPage />} />
+      <Route path="/size-guide" element={<SizeGuidePage />} />
+      <Route path="/about" element={<AboutUsPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      <Route path="/faqs" element={<FaqsPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
