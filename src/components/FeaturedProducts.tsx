@@ -102,7 +102,7 @@ const FeaturedProducts = () => {
           <h2 className="text-xl font-bold">Featured Products</h2>
         </div>
 
-        <div className="rounded-lg shadow-md  overflow-hidden-auto">
+        <div className="rounded-lg shadow-md object-cover overflow-hidden-auto">
           {isLoading ? (
             <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
               {Array.from({ length: 10 }).map((_, index) => (

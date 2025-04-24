@@ -21,6 +21,8 @@ import ShippingReturnsPage from './pages/ShippingReturnsPage';
 import SizeGuidePage from './pages/SizeGuidePage';
 import { default as PrivacyPolicyPage, default as TermsAndConditionsPage } from './pages/TermsAndConditionsPage';
 import FaqsPage from './pages/FaqsPage';
+import NewArrivals from './pages/NewArrivals';
+import BestSellers from './pages/BestSellers';
 
 
 
@@ -50,6 +52,8 @@ function App() {
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/faqs" element={<FaqsPage />} />
       <Route path="*" element={<NotFound />} />
+      <Route path="/new-arrivals" element={<NewArrivals products={[]}/>} />
+      <Route path="/best-sellers" element={<BestSellers />} />
     </Routes>
   );
 }

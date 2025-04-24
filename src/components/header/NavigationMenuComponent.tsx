@@ -9,6 +9,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Link } from 'react-router-dom';
+import "@/components/Header";
 interface Category {
   name: string;
   path: string;
@@ -44,7 +45,7 @@ const NavigationMenuComponent = ({ categories }: NavigationMenuComponentProps) =
                   </NavigationMenuLink>
                 </li>
                 <li>
-                  <Link to={`${category.path}/new-arrivals`} className="block p-2 hover:bg-accent rounded-md">
+                  <Link to={`/new-arrivals`} className="block p-2 hover:bg-accent rounded-md">
                     New Arrivals
                   </Link>
                 </li>
