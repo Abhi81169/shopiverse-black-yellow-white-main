@@ -1,11 +1,5 @@
 
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,6 +9,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Link } from 'react-router-dom';
+import "@/components/Header";
 interface Category {
   name: string;
   path: string;
@@ -32,12 +27,13 @@ const NavigationMenuComponent = ({ categories }: NavigationMenuComponentProps) =
           <NavigationMenuItem key={category.path}>
             <NavigationMenuTrigger>{category.name}</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 w-[200px]">
-                <li className="row-span-3">
+              <ul className="grid gap-1 p-4 w-[200px] " >
+                <li className="row-span-2 ">
                   <NavigationMenuLink asChild>
                     <Link
                       to={category.path}
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                      // className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                      className="absolute top-full left-0 mt-2 w-40 bg-white dark:bg-gray-800 border dark:border-gray-700 shadow-xl rounded-md z-20"
                     >
                       <div className="mb-2 mt-4 text-lg font-medium">
                         {category.name}

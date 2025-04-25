@@ -17,7 +17,7 @@ import { useEffect } from 'react';
       <div
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center px-4"
         style={{
-          backgroundImage: "url('https://media.timeout.com/images/100515417/750/562/image.jpg')"
+          backgroundImage: "url('https://plus.unsplash.com/premium_photo-1673356302067-aac3b545a362?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2xvdGhlcyUyMHdpdGglMjBsaWdodCUyMGNvdmVyJTIwcGhvdG98ZW58MHx8MHx8fDA%3D')"
         }}
       >
         {/* ✅ Dark overlay */}
@@ -31,14 +31,14 @@ import { useEffect } from 'react';
           <p className="text-lg text-gray-200">
             Discover a universe of fashion and essentials. Your one-stop online shop.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-12">
             <Link to="/login">
               <button className="px-6 py-3 text-lg bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl shadow">
                 Login
               </button>
             </Link>
             <Link to="/signuppage">
-              <button className="px-6 py-3 text-lg bg-white border border-yellow-500 text-yellow-500 hover:bg-yellow-50 rounded-xl shadow">
+              <button className="px-6 py-3 text-lg bg-white border border-yellow-500 text-yellow-500 hover:bg-black  rounded-xl shadow">
                 Register
               </button>
             </Link>
@@ -50,9 +50,9 @@ import { useEffect } from 'react';
         <h2 className="text-3xl font-bold text-center mb-8">Featured Looks</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "https://images.unsplash.com/photo-1514996937319-344454492b37",
-            "https://images.unsplash.com/photo-1520975911433-ec77e8f5f4e8",
-            "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126",
+            "https://images.pexels.com/photos/3772506/pexels-photo-3772506.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "https://images.unsplash.com/photo-1685875018148-6ac6d41b7c4e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNsb3RoZXN8ZW58MHx8MHx8fDA%3D",
+            "https://images.pexels.com/photos/4046313/pexels-photo-4046313.jpeg?auto=compress&cs=tinysrgb&w=600",
             "https://images.unsplash.com/photo-1556905055-8f358a7a47b2",
           ].map((url, i) => (
             <img
